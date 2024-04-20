@@ -14,12 +14,12 @@ namespace LifeStyle.Controllers.Goals
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GoalsController : ControllerBase
+    public class YearGoalsController : ControllerBase
     {
         private readonly IYearGoals _yearGoals;
         private readonly IMapper _mapper;
         private readonly IGenericRepository genericRepository;
-        public GoalsController(IYearGoals yearGoals, IMapper mapper, IGenericRepository genericRepository)
+        public YearGoalsController(IYearGoals yearGoals, IMapper mapper, IGenericRepository genericRepository)
         {
             _yearGoals = yearGoals;
             _mapper = mapper;
@@ -41,7 +41,7 @@ namespace LifeStyle.Controllers.Goals
                 return Ok(Responce);
             }
 
-            var Map = _mapper.Map<List<YearGoals_Dto>>(YearGoals);
+            var Map = _mapper.Map<List<YearGoals_D>>(YearGoals);
 
 
             Responce.Success(Map);
@@ -64,7 +64,7 @@ namespace LifeStyle.Controllers.Goals
                 return Ok(Responce);
             }
 
-            var Map = _mapper.Map<YearGoals_Dto>(GoalYaer);
+            var Map = _mapper.Map<YearGoals_D>(GoalYaer);
 
             Responce.Success(Map);
 
@@ -85,7 +85,7 @@ namespace LifeStyle.Controllers.Goals
                 return Ok(Responce);
             }
 
-            var Map = _mapper.Map<YearGoals_Dto>(GoalYaer);
+            var Map = _mapper.Map<YearGoals_D>(GoalYaer);
 
             Responce.Success(Map);
 
@@ -95,7 +95,7 @@ namespace LifeStyle.Controllers.Goals
 
 
         [HttpPost]
-        public async Task<ActionResult> Post(YearGoals_Create_Dto goals_Create_Dto) 
+        public async Task<ActionResult> Post(YearGoals_Create_D goals_Create_Dto) 
         {
             var responce = new BaseCommandResponse();
 
@@ -124,7 +124,7 @@ namespace LifeStyle.Controllers.Goals
 
 
         [HttpPut]
-        public ActionResult Update(YearGoals_Update_Dto yearGoals_Update)
+        public ActionResult Update(YearGoals_Update_D yearGoals_Update)
         {
 
             var Target = _yearGoals.GetById(8);

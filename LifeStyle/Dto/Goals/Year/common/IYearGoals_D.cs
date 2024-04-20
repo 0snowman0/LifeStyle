@@ -1,6 +1,6 @@
 ﻿namespace LifeStyle.Dto.Goals.Year.common
 {
-    public interface IYearGoals_Dto
+    public interface IYearGoals_D
     {
         public int NumberOfYear { get; set; }
 

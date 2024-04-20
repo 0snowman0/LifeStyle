@@ -1,10 +1,14 @@
-﻿using LifeStyle.Dto.Goals.Year.common;
+﻿using LifeStyle.Model.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LifeStyle.Dto.Goals.Year.Command
+namespace LifeStyle.Model.Goals
 {
-    public class YearGoals_Create_Dto : IYearGoals_Dto
+    [Table("goalsWeek_Ts")]
+    public class GoalsWeek_T : BaseT
     {
         public int NumberOfYear { get; set; }
+        public int NumberOfMonth { get; set; }
+        public int NumberOfWeek { get; set; }
 
 
         public string FirstGoals { get; set; } = string.Empty;

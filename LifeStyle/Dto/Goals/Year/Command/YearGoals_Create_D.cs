@@ -2,7 +2,7 @@
 
 namespace LifeStyle.Dto.Goals.Year.Command
 {
-    public class YearGoals_Update_Dto : IYearGoals_Dto
+    public class YearGoals_Create_D : IYearGoals_D
     {
         public int NumberOfYear { get; set; }
 

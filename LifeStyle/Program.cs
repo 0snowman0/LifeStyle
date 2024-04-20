@@ -36,11 +36,21 @@ builder.Services.AddScoped<IDbConnection>(provider => new SqlConnection(connecti
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
+
+
+
+//generic
 builder.Services.AddScoped<IGenericRepository,GenericRepository>();
 builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 builder.Services.AddScoped(typeof(ISqlQueryUtil<>), typeof(DapperSqlQuery<>));
 
+
+//Goal
 builder.Services.AddScoped<IYearGoals,YearGoals_Rep>();
+
+builder.Services.AddScoped<IGoalsMonth,GoalsMonth_Rep>();
+
+builder.Services.AddScoped<IGoalsWeek,GoalsWeek_Rep>();
 
 
 

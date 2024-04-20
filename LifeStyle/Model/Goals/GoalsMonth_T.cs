@@ -1,9 +1,12 @@
-﻿using LifeStyle.Dto.Common;
+﻿using LifeStyle.Model.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LifeStyle.Dto.Goals.Year.Quesreis
+namespace LifeStyle.Model.Goals
 {
-    public class YearGoals_Dto : Base_Dto
+    [Table("goalsMonth_Ts")]
+    public class GoalsMonth_T : BaseT
     {
+        public int NumberOfMonth { get; set; }
         public int NumberOfYear { get; set; }
 
 
