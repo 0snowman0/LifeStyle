@@ -1,9 +1,13 @@
 using LifeStyle.generic.Class;
 using LifeStyle.generic.Interface;
+using LifeStyle.Interface.Calculate;
 using LifeStyle.Interface.Goals;
-using LifeStyle.Model;
+using LifeStyle.Interface.Info;
+using LifeStyle.Model.Connection;
 using LifeStyle.Model.Goals;
+using LifeStyle.Repository.Calculate;
 using LifeStyle.Repository.Goals;
+using LifeStyle.Repository.Info;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Data;
@@ -53,7 +57,12 @@ builder.Services.AddScoped<IGoalsMonth,GoalsMonth_Rep>();
 builder.Services.AddScoped<IGoalsWeek,GoalsWeek_Rep>();
 
 
+//Text
+builder.Services.AddScoped<ITextDay,TextDay_Rep>();
 
+
+//Calculate
+builder.Services.AddScoped<ICalculate,Calculate_Rep>();
 
 
 

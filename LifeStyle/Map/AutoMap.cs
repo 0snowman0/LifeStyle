@@ -4,7 +4,10 @@ using LifeStyle.Dto.Goals.Week.Command;
 using LifeStyle.Dto.Goals.Week.Quesreis;
 using LifeStyle.Dto.Goals.Year.Command;
 using LifeStyle.Dto.Goals.Year.Quesreis;
+using LifeStyle.Dto.Info.TextDay.Command;
+using LifeStyle.Dto.Info.TextDay.Quesreis;
 using LifeStyle.Model.Goals;
+using LifeStyle.Model.Info;
 
 namespace LifeStyle.Map
 {
@@ -44,6 +47,23 @@ namespace LifeStyle.Map
 
             CreateMap<GoalsWeek_T, GoalsWeek_Update_D>().ReverseMap();
 
+
+            #endregion
+
+
+            #endregion
+
+
+            #region Info
+
+            #region TextDay
+
+
+            CreateMap<TextDay_T,TextDay_D>().ReverseMap();
+
+            CreateMap<TextDay_T, TextDay_Create_D>().ReverseMap();
+
+            CreateMap<TextDay_T,TextDay_Update_D>().ReverseMap();
 
             #endregion
 

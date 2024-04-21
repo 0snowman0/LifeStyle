@@ -3,7 +3,7 @@ using LifeStyle.generic;
 using LifeStyle.generic.Class;
 using LifeStyle.generic.Interface;
 using LifeStyle.Interface.Goals;
-using LifeStyle.Model;
+using LifeStyle.Model.Connection;
 using LifeStyle.Model.Goals;
 using System;
 using System.Data;

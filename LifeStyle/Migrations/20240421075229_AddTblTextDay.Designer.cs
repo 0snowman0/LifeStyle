@@ -4,6 +4,7 @@ using LifeStyle.Model.Connection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LifeStyle.Migrations
 {
     [DbContext(typeof(Context_En))]
-    partial class Context_EnModelSnapshot : ModelSnapshot
+    [Migration("20240421075229_AddTblTextDay")]
+    partial class AddTblTextDay
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,95 +151,6 @@ namespace LifeStyle.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("textDay_Ts");
-                });
-
-            modelBuilder.Entity("LifeStyle.Model.Info.TextMonth_T", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NumberOfMonth")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NumberOfYear")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("textMonth_Ts");
-                });
-
-            modelBuilder.Entity("LifeStyle.Model.Info.TextThreeMonth_T", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NumberOfThreeMonth")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NumberOfYear")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("textThreeMonth_Ts");
-                });
-
-            modelBuilder.Entity("LifeStyle.Model.Info.TextWeek_T", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NumberOfYear")
-                        .HasColumnType("int");
-
-                    b.Property<int>("numberOfWeek")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("textWeek_Ts");
-                });
-
-            modelBuilder.Entity("LifeStyle.Model.Info.TextYear_T", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NumberOfYear")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("textYear_Ts");
                 });
 #pragma warning restore 612, 618
         }
