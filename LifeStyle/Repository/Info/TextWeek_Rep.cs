@@ -1,32 +1,29 @@
 ﻿using LifeStyle.generic.Class;
 using LifeStyle.generic.Interface;
+using LifeStyle.Interface.Goals;
 using LifeStyle.Interface.Info;
+using LifeStyle.Model.Goals;
 using LifeStyle.Model.Info;
 using System.Data;
 
 namespace LifeStyle.Repository.Info
 {
-    public class TextDay_Rep : RepositoryBase<TextDay_T>, ITextDay
+    public class TextWeek_Rep : RepositoryBase<TextWeek_T>, ITextWeek
     {
         private readonly IDbConnection _connection;
-        ISqlQueryUtil<TextDay_T> _sqlQueryUtil;
+        ISqlQueryUtil<TextWeek_T> _sqlQueryUtil;
         private readonly IGenericRepository _genericRepository;
         private readonly IConfiguration _configuration;
 
-        public TextDay_Rep
-            (IDbConnection connection, ISqlQueryUtil<TextDay_T> sqlQueryUtil, 
+        public TextWeek_Rep
+            (IDbConnection connection, ISqlQueryUtil<TextWeek_T> sqlQueryUtil,
             IGenericRepository genericRepository, IConfiguration configuration)
-            :base(sqlQueryUtil, connection)
+            : base(sqlQueryUtil, connection)
         {
             _connection = connection;
             _sqlQueryUtil = sqlQueryUtil;
             _genericRepository = genericRepository;
             _configuration = configuration;
-        }
-
-        public TextDay_T Get_By_Date(DateOnly date)
-        {
-            throw new NotImplementedException();
         }
     }
 }

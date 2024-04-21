@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using static System.Net.Mime.MediaTypeNames;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,6 +60,14 @@ builder.Services.AddScoped<IGoalsWeek,GoalsWeek_Rep>();
 
 //Text
 builder.Services.AddScoped<ITextDay,TextDay_Rep>();
+
+builder.Services.AddScoped<ITextMonth, TextMonth_Rep>();
+
+builder.Services.AddScoped<ITextThreeMonth,TextThreeMonth_Rep>();
+
+builder.Services.AddScoped<ITextWeek,TextWeek_Rep>();
+
+builder.Services.AddScoped<ITextYear,TextYear_Rep>();
 
 
 //Calculate

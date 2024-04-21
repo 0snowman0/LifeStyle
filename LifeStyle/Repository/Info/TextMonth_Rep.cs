@@ -6,27 +6,22 @@ using System.Data;
 
 namespace LifeStyle.Repository.Info
 {
-    public class TextDay_Rep : RepositoryBase<TextDay_T>, ITextDay
+    public class TextMonth_Rep : RepositoryBase<TextMonth_T>, ITextMonth
     {
         private readonly IDbConnection _connection;
-        ISqlQueryUtil<TextDay_T> _sqlQueryUtil;
+        ISqlQueryUtil<TextMonth_T> _sqlQueryUtil;
         private readonly IGenericRepository _genericRepository;
         private readonly IConfiguration _configuration;
 
-        public TextDay_Rep
-            (IDbConnection connection, ISqlQueryUtil<TextDay_T> sqlQueryUtil, 
+        public TextMonth_Rep
+            (IDbConnection connection, ISqlQueryUtil<TextMonth_T> sqlQueryUtil,
             IGenericRepository genericRepository, IConfiguration configuration)
-            :base(sqlQueryUtil, connection)
+            : base(sqlQueryUtil, connection)
         {
             _connection = connection;
             _sqlQueryUtil = sqlQueryUtil;
             _genericRepository = genericRepository;
             _configuration = configuration;
-        }
-
-        public TextDay_T Get_By_Date(DateOnly date)
-        {
-            throw new NotImplementedException();
         }
     }
 }
